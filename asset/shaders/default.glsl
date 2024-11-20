@@ -1,43 +1,44 @@
 #type vertex
 #version 330 core
-
-layout (location = 0) in vec2 aPos;
-layout (location = 1) in vec4 aColor;
-layout (location = 2) in vec2 aTexCoord;
-layout (location = 3) in float aTexIndex;
-
-out vec4 fColor;
-out vec2 fTexCoord;
-out float fTexIndex;
+layout (location=0) in vec3 aPos;
+layout (location=1) in vec4 aColor;
+layout (location=2) in vec2 aTexCoords;
+layout (location=3) in float aTexId;
 
 uniform mat4 uProjection;
 uniform mat4 uView;
 
-void main() {
-    fColor = aColor;
-    fTexCoord = aTexCoord;
-    fTexIndex = aTexIndex;
-    gl_Position = uProjection * uView * vec4(aPos, 0.0, 1.0);
-}
+out vec4 fColor;
+out vec2 fTexCoords;
+out float fTexId;
 
+void main()
+{
+    fColor = aColor;
+    fTexCoords = aTexCoords;
+    fTexId = aTexId;
+
+    gl_Position = uProjection * uView * vec4(aPos, 1.0);
+}
 
 #type fragment
 #version 330 core
 
 in vec4 fColor;
-in vec2 fTexCoord;
-in float fTexIndex;
-
-out vec4 FragColor;
+in vec2 fTexCoords;
+in float fTexId;
 
 uniform sampler2D uTextures[8];
 
-void main() {
-    int index = int(fTexIndex);
-    if (index >= 0 && index < 8) {
-        FragColor = texture(uTextures[index], fTexCoord) * fColor;
+out vec4 color;
+
+void main()
+{
+    if (fTexId > 0) {
+        int id = int(fTexId);
+        color = fColor * texture(uTextures[id], fTexCoords);
+        //color = vec4(fTexCoords, 0, 1);
     } else {
-        FragColor = fColor;
+        color = fColor;
     }
 }
-
