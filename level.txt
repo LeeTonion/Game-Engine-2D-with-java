@@ -1,47 +1,53 @@
 [
   {
+    "uid": 0,
     "name": "Object 1",
     "components": [
       {
         "type": "components.SpriteRenderer",
         "properties": {
           "color": {
+            "x": 0.046400927,
+            "y": 0.27746263,
+            "z": 0.31707317,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 0.0,
+            "height": 0.0,
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 0
+        }
+      },
+      {
+        "type": "components.Rigidbody",
+        "properties": {
+          "colliderType": 0,
+          "friction": 0.8,
+          "velocity": {
             "x": 0.0,
-            "y": 0.76767683,
-            "z": 1.0,
-            "w": 1.0
+            "y": 0.5,
+            "z": 0.0
           },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "lastTransform": {
-            "position": {
-              "x": 200.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
+          "uid": 1
         }
       }
     ],
@@ -58,6 +64,7 @@
     "zIndex": 3
   },
   {
+    "uid": 1,
     "name": "Object 2",
     "components": [
       {
@@ -70,11 +77,13 @@
             "w": 1.0
           },
           "sprite": {
+            "width": 0.0,
+            "height": 0.0,
             "texture": {
-              "filepath": "asset/images/2024-10-17 (1).png",
+              "filepath": "asset/images/green.png",
               "texID": 3,
-              "width": 1920,
-              "height": 1080
+              "width": 300,
+              "height": 300
             },
             "texCoords": [
               {
@@ -95,17 +104,7 @@
               }
             ]
           },
-          "lastTransform": {
-            "position": {
-              "x": 400.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
+          "uid": 2
         }
       }
     ],
@@ -122,65 +121,8 @@
     "zIndex": 1
   },
   {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 0.039995916,
-            "y": 0.27431545,
-            "z": 0.3299663,
-            "w": 1.0
-          },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "lastTransform": {
-            "position": {
-              "x": 200.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 200.0,
-        "y": 100.0
-      },
-      "scale": {
-        "x": 256.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 3
-  },
-  {
-    "name": "Object 2",
+    "uid": 2,
+    "name": "Sprite_Object_Gen",
     "components": [
       {
         "type": "components.SpriteRenderer",
@@ -192,117 +134,52 @@
             "w": 1.0
           },
           "sprite": {
+            "width": 44.0,
+            "height": 35.0,
             "texture": {
-              "filepath": "asset/images/2024-10-17 (1).png",
-              "texID": 3,
-              "width": 1920,
-              "height": 1080
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
             },
             "texCoords": [
               {
-                "x": 1.0,
+                "x": 0.5462963,
                 "y": 1.0
               },
               {
-                "x": 1.0,
-                "y": 0.0
+                "x": 0.5462963,
+                "y": -0.09375
               },
               {
-                "x": 0.0,
-                "y": 0.0
+                "x": 0.44444445,
+                "y": -0.09375
               },
               {
-                "x": 0.0,
+                "x": 0.44444445,
                 "y": 1.0
               }
             ]
           },
-          "lastTransform": {
-            "position": {
-              "x": 400.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
+          "uid": 3
         }
       }
     ],
     "transform": {
       "position": {
-        "x": 400.0,
-        "y": 100.0
+        "x": 1005.33325,
+        "y": 320.00003
       },
       "scale": {
-        "x": 256.0,
-        "y": 256.0
+        "x": 176.0,
+        "y": 140.0
       }
     },
-    "zIndex": 1
+    "zIndex": 0
   },
   {
-    "name": "Object 1",
-    "components": [
-      {
-        "type": "components.SpriteRenderer",
-        "properties": {
-          "color": {
-            "x": 0.0,
-            "y": 1.0,
-            "z": 0.5656564,
-            "w": 1.0
-          },
-          "sprite": {
-            "texCoords": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "lastTransform": {
-            "position": {
-              "x": 200.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
-        }
-      }
-    ],
-    "transform": {
-      "position": {
-        "x": 200.0,
-        "y": 100.0
-      },
-      "scale": {
-        "x": 256.0,
-        "y": 256.0
-      }
-    },
-    "zIndex": 3
-  },
-  {
-    "name": "Object 2",
+    "uid": 3,
+    "name": "Sprite_Object_Gen",
     "components": [
       {
         "type": "components.SpriteRenderer",
@@ -314,24 +191,26 @@
             "w": 1.0
           },
           "sprite": {
+            "width": 44.0,
+            "height": 35.0,
             "texture": {
-              "filepath": "asset/images/2024-10-17 (1).png",
-              "texID": 3,
-              "width": 1920,
-              "height": 1080
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
             },
             "texCoords": [
               {
-                "x": 1.0,
+                "x": 0.10185185,
                 "y": 1.0
               },
               {
-                "x": 1.0,
-                "y": 0.0
+                "x": 0.10185185,
+                "y": -0.09375
               },
               {
                 "x": 0.0,
-                "y": 0.0
+                "y": -0.09375
               },
               {
                 "x": 0.0,
@@ -339,30 +218,1103 @@
               }
             ]
           },
-          "lastTransform": {
-            "position": {
-              "x": 400.0,
-              "y": 100.0
-            },
-            "scale": {
-              "x": 256.0,
-              "y": 256.0
-            }
-          },
-          "isDirty": false
+          "uid": 4
         }
       }
     ],
     "transform": {
       "position": {
-        "x": 400.0,
-        "y": 100.0
+        "x": 188.66669,
+        "y": 369.55283
       },
       "scale": {
-        "x": 256.0,
-        "y": 256.0
+        "x": 176.0,
+        "y": 140.0
       }
     },
-    "zIndex": 1
+    "zIndex": 0
+  },
+  {
+    "uid": 4,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.10185185,
+                "y": 1.0
+              },
+              {
+                "x": 0.10185185,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 5
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 257.3333,
+        "y": 535.79456
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 5,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.21296297,
+                "y": 1.0
+              },
+              {
+                "x": 0.21296297,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 6
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 570.6666,
+        "y": 624.66986
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 6,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 7
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 356.0,
+        "y": 425.81927
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 7,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.10185185,
+                "y": 1.0
+              },
+              {
+                "x": 0.10185185,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 8
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 322.0,
+        "y": 376.58615
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 8,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.5462963,
+                "y": 1.0
+              },
+              {
+                "x": 0.5462963,
+                "y": -0.09375
+              },
+              {
+                "x": 0.44444445,
+                "y": -0.09375
+              },
+              {
+                "x": 0.44444445,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 9
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 132.66666,
+        "y": 480.8069
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 9,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 10
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 118.0,
+        "y": 158.55379
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 10,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.10185185,
+                "y": 1.0
+              },
+              {
+                "x": 0.10185185,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 11
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": -32.66664,
+        "y": 299.21982
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 11,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 12
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 219.33331,
+        "y": 130.42056
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 12,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 13
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 236.0,
+        "y": 205.22932
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 13,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 14
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 329.3333,
+        "y": 134.8963
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 14,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 15
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 171.33334,
+        "y": 216.73836
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 15,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.21296297,
+                "y": 1.0
+              },
+              {
+                "x": 0.21296297,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 16
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 262.66663,
+        "y": 452.6737
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 16,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.21296297,
+                "y": 1.0
+              },
+              {
+                "x": 0.21296297,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 17
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 716.0,
+        "y": 6.3786926
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 10
+  },
+  {
+    "uid": 17,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.10185185,
+                "y": 1.0
+              },
+              {
+                "x": 0.10185185,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 18
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 32.0,
+        "y": 558.8126
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 18,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.10185185,
+                "y": 1.0
+              },
+              {
+                "x": 0.10185185,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": -0.09375
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 19
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 158.66669,
+        "y": 367.63467
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 19,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.21296297,
+                "y": 1.0
+              },
+              {
+                "x": 0.21296297,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": -0.09375
+              },
+              {
+                "x": 0.11111111,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 20
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 432.6667,
+        "y": 542.8279
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 20,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.5462963,
+                "y": 1.0
+              },
+              {
+                "x": 0.5462963,
+                "y": -0.09375
+              },
+              {
+                "x": 0.44444445,
+                "y": -0.09375
+              },
+              {
+                "x": 0.44444445,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 21
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 326.0,
+        "y": 160.47194
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 21,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 22
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 258.0,
+        "y": 160.47194
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 22,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 44.0,
+            "height": 35.0,
+            "texture": {
+              "filepath": "asset/images/WalkingCaveExplorer-Sheet.png",
+              "texID": 2,
+              "width": 432,
+              "height": 32
+            },
+            "texCoords": [
+              {
+                "x": 0.6574074,
+                "y": 1.0
+              },
+              {
+                "x": 0.6574074,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": -0.09375
+              },
+              {
+                "x": 0.5555556,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 23
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 418.0,
+        "y": 429.65558
+      },
+      "scale": {
+        "x": 176.0,
+        "y": 140.0
+      }
+    },
+    "zIndex": 0
   }
 ]
