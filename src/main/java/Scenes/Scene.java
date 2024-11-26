@@ -8,6 +8,7 @@ import imgui.ImGui;
 import jade.Camera;
 import jade.GameObject;
 import jade.GameObjectDeserializer;
+import jade.Transform;
 import renderer.Renderer;
 
 import java.io.FileWriter;
@@ -16,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public abstract class Scene {
 
@@ -23,7 +25,6 @@ public abstract class Scene {
     protected Camera camera;
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
-    protected GameObject activeGameObject = null;
     protected boolean levelLoaded = false;
 
     public Scene() {
@@ -52,24 +53,29 @@ public abstract class Scene {
         }
     }
 
+    public GameObject getGameObject(int gameObjectId) {
+        Optional<GameObject> result = this.gameObjects.stream()
+                .filter(gameObject -> gameObject.getUid() == gameObjectId)
+                .findFirst();
+        return result.orElse(null);
+    }
+
     public abstract void update(float dt);
+    public abstract void render();
 
     public Camera camera() {
         return this.camera;
     }
 
-    public void sceneImgui() {
-        if (activeGameObject != null) {
-            ImGui.begin("Inspector");
-            activeGameObject.imgui();
-            ImGui.end();
-        }
-
-        imgui();
-    }
-
     public void imgui() {
 
+    }
+
+    public GameObject createGameObject(String name) {
+        GameObject go = new GameObject(name);
+        go.addComponent(new Transform());
+        go.transform = go.getComponent(Transform.class);
+        return go;
     }
 
     public void saveExit() {
@@ -81,7 +87,13 @@ public abstract class Scene {
 
         try {
             FileWriter writer = new FileWriter("level.txt");
-            writer.write(gson.toJson(this.gameObjects));
+            List<GameObject> objsToSerialize = new ArrayList<>();
+            for (GameObject obj : this.gameObjects) {
+                if (obj.doSerialization()) {
+                    objsToSerialize.add(obj);
+                }
+            }
+            writer.write(gson.toJson(objsToSerialize));
             writer.close();
         } catch(IOException e) {
             e.printStackTrace();
@@ -103,25 +115,26 @@ public abstract class Scene {
         }
 
         if (!inFile.equals("")) {
-            int maxCompId = -1;
             int maxGoId = -1;
+            int maxCompId = -1;
             GameObject[] objs = gson.fromJson(inFile, GameObject[].class);
             for (int i=0; i < objs.length; i++) {
                 addGameObjectToScene(objs[i]);
+
                 for (Component c : objs[i].getAllComponents()) {
-                    if (c.uid() > maxCompId) {
-                        maxCompId = c.uid();
+                    if (c.getUid() > maxCompId) {
+                        maxCompId = c.getUid();
                     }
                 }
-                if (objs[i].uid() > maxGoId) {
-                    maxGoId = objs[i].uid();
+                if (objs[i].getUid() > maxGoId) {
+                    maxGoId = objs[i].getUid();
                 }
             }
 
-            maxCompId++;
             maxGoId++;
-            Component.init(maxCompId);
+            maxCompId++;
             GameObject.init(maxGoId);
+            Component.init(maxCompId);
             this.levelLoaded = true;
         }
     }
