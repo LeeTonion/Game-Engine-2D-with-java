@@ -28,7 +28,6 @@ public class LevelEditorScene extends Scene {
         loadResources();
         sprites = AssetPool.getSpritesheet("asset/images/tileset.png");
         Spritesheet gizmos = AssetPool.getSpritesheet("asset/images/gizmos.png");
-        this.camera = new Camera(new Vector2f(-250,0));
         levelEditorStuff.addComponent(new MouseControls());
         levelEditorStuff.addComponent(new GridLines());
         levelEditorStuff.addComponent(new EditorCamera(this.camera));
@@ -89,11 +88,6 @@ public class LevelEditorScene extends Scene {
         }
 
 
-    }
-
-    @Override
-    public void render() {
-            this.renderer.render();
     }
 
     @Override
