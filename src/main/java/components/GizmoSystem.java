@@ -17,7 +17,7 @@ public class GizmoSystem extends Component {
                 Window.getImguiLayer().getPropertiesWindow()));
     }
     @Override
-    public void update(float dt) {
+    public void editorUpdate(float dt) {
         if (usingGizmo == 0) {
             gameObject.getComponent(TranslateGizmo.class).setUsing();
             gameObject.getComponent(ScaleGizmo.class).setNotUsing();

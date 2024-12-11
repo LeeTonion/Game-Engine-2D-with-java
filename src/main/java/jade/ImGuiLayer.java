@@ -2,6 +2,7 @@ package jade;
 
 import Scenes.Scene;
 import editor.GameViewWindow;
+import editor.MenuBar;
 import editor.PropertiesWindow;
 import imgui.*;
 
@@ -24,13 +25,16 @@ public class ImGuiLayer {
 
     // LWJGL3 renderer (SHOULD be initialized)
     private final ImGuiImplGl3 imGuiGl3 = new ImGuiImplGl3();
+
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
+    private MenuBar menuBar;
 
     public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture) {
         this.glfwWindow = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
+        this.menuBar = new MenuBar();
     }
 
     // Initialize Dear ImGui.
@@ -185,6 +189,7 @@ public class ImGuiLayer {
         gameViewWindow.imgui();
         propertiesWindow.update(dt,currentScene);
         propertiesWindow.imgui();
+        menuBar.imgui();
         ImGui.end();
         ImGui.render();
 
