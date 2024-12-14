@@ -1,0 +1,191 @@
+[
+  {
+    "uid": 5,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.Transform",
+        "properties": {
+          "position": {
+            "x": 2.625,
+            "y": -41.30738
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 19
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "asset/images/tileset.png",
+              "width": 352,
+              "height": 176
+            },
+            "texCoords": [
+              {
+                "x": 0.3181818,
+                "y": 1.0
+              },
+              {
+                "x": 0.3181818,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.27272728,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.27272728,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 20
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 6,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.Transform",
+        "properties": {
+          "position": {
+            "x": -74.5684,
+            "y": 1.375
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 21
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "asset/images/tileset.png",
+              "width": 352,
+              "height": 176
+            },
+            "texCoords": [
+              {
+                "x": 0.3181818,
+                "y": 1.0
+              },
+              {
+                "x": 0.3181818,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.27272728,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.27272728,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 22
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 7,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "jade.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": -31.837267
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "zIndex": 0,
+          "uid": 23
+        }
+      },
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "asset/images/tileset.png",
+              "width": 352,
+              "height": 176
+            },
+            "texCoords": [
+              {
+                "x": 0.4090909,
+                "y": 1.0
+              },
+              {
+                "x": 0.4090909,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.36363637,
+                "y": 0.90909094
+              },
+              {
+                "x": 0.36363637,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 24
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  }
+]
