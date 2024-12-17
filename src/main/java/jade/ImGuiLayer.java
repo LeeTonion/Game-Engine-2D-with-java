@@ -43,6 +43,10 @@ public class ImGuiLayer {
         this.sceneHierarchyWindow = new SceneHierarchyWindow();
     }
 
+    public GameViewWindow getGameViewWindow(){
+        return this.gameViewWindow;
+    }
+
     // Initialize Dear ImGui.
     public void initImGui() {
         // IMPORTANT!!
@@ -108,6 +112,8 @@ public class ImGuiLayer {
             io.setMouseWheel(io.getMouseWheel() + (float) yOffset);
             if (!io.getWantCaptureMouse() || gameViewWindow.getWantCaptureMouse() ) {
                 MouseListener.mouseScrollCallback(w, xOffset, yOffset);
+            } else {
+                MouseListener.clear();
             }
         });
 
@@ -156,7 +162,6 @@ public class ImGuiLayer {
         currentScene.imgui();
         //ImGui.showDemoWindow();
         gameViewWindow.imgui();
-        propertiesWindow.update(dt,currentScene);
         propertiesWindow.imgui();
         sceneHierarchyWindow.imgui();
 
