@@ -3,6 +3,8 @@ package jade;
 import components.*;
 import org.joml.Vector2f;
 import org.lwjgl.system.CallbackI;
+import physics2d.components.Box2DCollider;
+import physics2d.components.CircleCollider;
 import physics2d.components.PillboxCollider;
 import physics2d.components.Rigidbody2D;
 import physics2d.enums.BodyType;
@@ -189,19 +191,94 @@ public class Prefabs {
         Spritesheet items = AssetPool.getSpritesheet("asset/images/items.png");
         GameObject questionBlock = generateSpriteObject(items.getSprite(0), 0.25f, 0.25f);
 
-        AnimationState run = new AnimationState();
-        run.title = "Flicker";
+        AnimationState flicker = new AnimationState();
+        flicker.title = "Flicker";
         float defaultFrameTime = 0.23f;
-        run.addFrame(items.getSprite(0), 0.57f);
-        run.addFrame(items.getSprite(1), defaultFrameTime);
-        run.addFrame(items.getSprite(2), defaultFrameTime);
-        run.setLoop(true);
+        flicker.addFrame(items.getSprite(0), 0.57f);
+        flicker.addFrame(items.getSprite(1), defaultFrameTime);
+        flicker.addFrame(items.getSprite(2), defaultFrameTime);
+        flicker.setLoop(true);
+
+        AnimationState inactive = new AnimationState();
+        inactive.title = "Inactive";
+        inactive.addFrame(items.getSprite(3), 0.1f);
+        inactive.setLoop(false);
 
         StateMachine stateMachine = new StateMachine();
-        stateMachine.addState(run);
-        stateMachine.setDefaultState(run.title);
+        stateMachine.addState(flicker);
+        stateMachine.addState(inactive);
+        stateMachine.setDefaultState(flicker.title);
+        stateMachine.addState(flicker.title, inactive.title, "setInactive");
         questionBlock.addComponent(stateMachine);
+        questionBlock.addComponent(new QuestionBlock());
+
+        Rigidbody2D rb = new Rigidbody2D();
+        rb.setBodyType(BodyType.Static);
+        questionBlock.addComponent(rb);
+        Box2DCollider b2d = new Box2DCollider();
+        b2d.setHalfSize(new Vector2f(0.25f, 0.25f));
+        questionBlock.addComponent(b2d);
+        questionBlock.addComponent(new Ground());
 
         return questionBlock;
+    }
+
+    public static GameObject generateBlockcoin(){
+        Spritesheet items = AssetPool.getSpritesheet("asset/images/items.png");
+        GameObject coin = generateSpriteObject(items.getSprite(7), 0.25f, 0.25f);
+
+        AnimationState coinFlip = new AnimationState();
+        coinFlip.title = "CoinFlip";
+        float defaultFrameTime = 0.23f;
+        coinFlip.addFrame(items.getSprite(7), 0.57f);
+        coinFlip.addFrame(items.getSprite(8), defaultFrameTime);
+        coinFlip.addFrame(items.getSprite(9), defaultFrameTime);
+        coinFlip.setLoop(true);
+
+        StateMachine stateMachine = new StateMachine();
+        stateMachine.addState(coinFlip);
+        stateMachine.setDefaultState(coinFlip.title);
+        coin.addComponent(stateMachine);
+        coin.addComponent(new QuestionBlock());
+
+        coin.addComponent(new BlockCoin());
+
+        return coin;
+    }
+
+    public static GameObject generateMushroom(){
+        Spritesheet items = AssetPool.getSpritesheet("asset/images/items.png");
+        GameObject mushroom = generateSpriteObject(items.getSprite(10), 0.25f, 0.25f);
+
+        Rigidbody2D rb = new Rigidbody2D();
+        rb.setBodyType(BodyType.Dynamic);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+        mushroom.addComponent(rb);
+
+        CircleCollider circleCollider = new CircleCollider();
+        circleCollider.setRadius(0.14f);
+        mushroom.addComponent(circleCollider);
+        mushroom.addComponent(new MushroomAI());
+
+        return mushroom;
+    }
+
+    public static GameObject generateFlower(){
+        Spritesheet items = AssetPool.getSpritesheet("asset/images/items.png");
+        GameObject flower = generateSpriteObject(items.getSprite(20), 0.25f, 0.25f);
+
+        Rigidbody2D rb = new Rigidbody2D();
+        rb.setBodyType(BodyType.Static);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+        flower.addComponent(rb);
+
+        CircleCollider circleCollider = new CircleCollider();
+        circleCollider.setRadius(0.14f);
+        flower.addComponent(circleCollider);
+        flower.addComponent(new Flower());
+
+        return flower;
     }
 }
