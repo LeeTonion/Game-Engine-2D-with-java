@@ -119,7 +119,10 @@ public class TurtleAI extends Component{
             }
         }
 
-
+        if(obj.getComponent(Fireball.class) != null){
+            stomp();
+            obj.getComponent(Fireball.class).disappear();
+        }
     }
 
     @Override

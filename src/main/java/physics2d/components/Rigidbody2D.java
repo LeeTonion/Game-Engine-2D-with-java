@@ -42,14 +42,14 @@ public class Rigidbody2D extends Component {
         }
     }
 
-    public void addVelocity(Vector2f forceToAdd){
-        if(rawBody != null) {
+    public void addVelocity(Vector2f forceToAdd) {
+        if (rawBody != null) {
             rawBody.applyForceToCenter(new Vec2(forceToAdd.x, forceToAdd.y));
         }
     }
 
-    public void addImpulse(Vector2f impulse){
-        if(rawBody != null) {
+    public void addImpulse(Vector2f impulse) {
+        if (rawBody != null) {
             rawBody.applyLinearImpulse(new Vec2(velocity.x, velocity.y), rawBody.getWorldCenter());
         }
     }
@@ -60,50 +60,50 @@ public class Rigidbody2D extends Component {
 
     public void setVelocity(Vector2f velocity) {
         this.velocity.set(velocity);
-        if (rawBody != null){
+        if (rawBody != null) {
             this.rawBody.setLinearVelocity(new Vec2(velocity.x, velocity.y));
         }
     }
 
-    public void setPosition(Vector2f newPos){
-        if(rawBody != null){
+    public void setPosition(Vector2f newPos) {
+        if (rawBody != null) {
             rawBody.setTransform(new Vec2(newPos.x, newPos.y), gameObject.transform.rotation);
         }
     }
 
-    public void setAngularVelocity(float angularVelocity){
+    public void setAngularVelocity(float angularVelocity) {
         this.angularVelocity = angularVelocity;
-        if(rawBody != null){
+        if (rawBody != null) {
             this.rawBody.setAngularVelocity(angularVelocity);
         }
     }
 
-    public void setGravityScale(float gravityScale){
+    public void setGravityScale(float gravityScale) {
         this.gravityScale = gravityScale;
-        if(rawBody != null){
+        if (rawBody != null) {
             this.rawBody.setGravityScale(gravityScale);
         }
     }
 
-    public void setIsSensor(){
+    public void setIsSensor() {
         isSensor = true;
-        if(rawBody != null){
+        if (rawBody != null) {
             Window.getPhysics().setIsSensor(this);
         }
     }
 
-    public void setNotSensor(){
-        isSensor = true;
-        if(rawBody != null){
+    public void setNotSensor() {
+        isSensor = false;
+        if (rawBody != null) {
             Window.getPhysics().setNotSensor(this);
         }
     }
 
-    public float getFriction(){
+    public float getFriction() {
         return this.friction;
     }
 
-    public boolean isSensor(){
+    public boolean isSensor() {
         return this.isSensor;
     }
 

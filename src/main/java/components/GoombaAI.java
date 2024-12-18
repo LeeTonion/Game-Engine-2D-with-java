@@ -80,11 +80,15 @@ public class GoombaAI extends Component{
             if(!playerController.isDead() && !playerController.isHurtInvincible() && contactNormal.y > 0.5f){
                 playerController.enemyBounce();
                 stomp();
-            } else if (!playerController.isDead() && !playerController.isHurtInvincible()) {
+            } else if (!playerController.isDead() && !playerController.isInvincible()) {
                 playerController.die();
             }
         } else if (Math.abs(contactNormal.y ) < 0.1f) {
             goingRight = contactNormal.x < 0;
+        }
+        if(obj.getComponent(Fireball.class) != null){
+            stomp();
+            obj.getComponent(Fireball.class).disappear();
         }
     }
 
