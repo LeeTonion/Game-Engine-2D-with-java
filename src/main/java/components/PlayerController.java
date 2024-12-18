@@ -1,6 +1,7 @@
 package components;
 
 import Scenes.LevelEditorSceneInitializer;
+import Scenes.LevelSceneInitializer;
 import jade.GameObject;
 import jade.KeyListener;
 import jade.Window;
@@ -55,6 +56,7 @@ public class PlayerController extends Component{
     private transient float blinkTime = 0.0f;
     private transient SpriteRenderer spr;
 
+
     @Override
     public void start(){
         this.spr = gameObject.getComponent(SpriteRenderer.class);
@@ -78,7 +80,7 @@ public class PlayerController extends Component{
                 this.rb.setVelocity(this.velocity);
                 this.rb.setAngularVelocity(0);
             } else if (!deadGoingUp && gameObject.transform.position.y <= deadMinHeight) {
-                Window.changeScene(new LevelEditorSceneInitializer());
+                Window.changeScene(new LevelSceneInitializer());
             }
             return;
         }
@@ -186,6 +188,11 @@ public class PlayerController extends Component{
         onGround = Physics2D.checkOnGround(this.gameObject, innerPlayerWidth, yVal);
     }
 
+    public void setPosition(Vector2f newPos){
+        this.gameObject.transform.position.set(newPos);
+        this.rb.setPosition(newPos);
+    }
+
     public void powerup(){
         if(playerState == PlayerState.Small){
             playerState = PlayerState.Big;
@@ -266,6 +273,10 @@ public class PlayerController extends Component{
             hurtInvincibilityTimeLeft = hurtInvincibilityTime;
             AssetPool.getSound("asset/sounds/pipe.ogg").play();
         }
+    }
+
+    public boolean hasWon(){
+        return false;
     }
 
     public boolean isSmall(){

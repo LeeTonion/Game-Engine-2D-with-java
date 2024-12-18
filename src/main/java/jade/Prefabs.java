@@ -259,7 +259,7 @@ public class Prefabs {
 
         AnimationState squashed = new AnimationState();
         squashed.title = "Squashed";
-        squashed.addFrame(sprites.getSprite(16), 1.0f);
+        squashed.addFrame(sprites.getSprite(16), 0.1f);
         squashed.setLoop(false);
 
         StateMachine stateMachine = new StateMachine();
@@ -281,6 +281,44 @@ public class Prefabs {
         goomba.addComponent(new GoombaAI());
 
         return goomba;
+    }
+
+    public static GameObject generateTurtle(){
+        Spritesheet turtleSprites = AssetPool.getSpritesheet("asset/images/turtle.png");
+        GameObject turtle = generateSpriteObject(turtleSprites.getSprite(0), 0.25f, 0.35f);
+
+        AnimationState walk = new AnimationState();
+        walk.title = "Walk";
+        float defaultFrameTime = 0.23f;
+        walk.addFrame(turtleSprites.getSprite(0), defaultFrameTime);
+        walk.addFrame(turtleSprites.getSprite(1), defaultFrameTime);
+        walk.setLoop(true);
+
+        AnimationState squashed = new AnimationState();
+        squashed.title = "TurtleShellSpin";
+        squashed.addFrame(turtleSprites.getSprite(2), 0.1f);
+        squashed.setLoop(false);
+
+        StateMachine stateMachine = new StateMachine();
+        stateMachine.addState(walk);
+        stateMachine.addState(squashed);
+        stateMachine.setDefaultState(walk.title);
+        stateMachine.addState(walk.title, squashed.title, "squashMe");
+        turtle.addComponent(stateMachine);
+
+        Rigidbody2D rb = new Rigidbody2D();
+        rb.setBodyType(BodyType.Dynamic);
+        rb.setMass(0.1f);
+        rb.setFixedRotation(true);
+        turtle.addComponent(rb);
+        CircleCollider circle =  new CircleCollider();
+        circle.setRadius(0.13f);
+        circle.setOffset(new Vector2f(0, -0.05f));
+        turtle.addComponent(circle);
+
+        turtle.addComponent(new TurtleAI());
+
+        return turtle;
     }
 
     public static GameObject generateMushroom(){
@@ -317,5 +355,26 @@ public class Prefabs {
         flower.addComponent(new Flower());
 
         return flower;
+    }
+
+    public static GameObject generatePipe(Direction direction) {
+        Spritesheet pipes = AssetPool.getSpritesheet("asset/images/pipes.png");
+        int index = direction == Direction.Down ? 0 :
+                direction == Direction.Up ? 1 :
+                        direction == Direction.Right ? 2 :
+                                direction == Direction.Left ? 3 : -1;
+        assert index != -1 : "Invalid pipe direction.";
+        GameObject pipe = generateSpriteObject(pipes.getSprite(index), 0.5f, 0.5f);
+        Rigidbody2D rb = new Rigidbody2D();
+        rb.setBodyType(BodyType.Static);
+        rb.setFixedRotation(true);
+        rb.setContinuousCollision(false);
+        pipe.addComponent(rb);
+        Box2DCollider b2d = new Box2DCollider();
+        b2d.setHalfSize(new Vector2f(0.5f, 0.5f));
+        pipe.addComponent(b2d);
+        pipe.addComponent(new Pipe(direction));
+        pipe.addComponent(new Ground());
+        return pipe;
     }
 }
