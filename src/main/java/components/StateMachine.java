@@ -78,7 +78,6 @@ public class StateMachine extends Component{
                         }
                         index++;
                     }
-
                     if(newStateIndex > -1){
                         currentState = states.get(newStateIndex);
                     }
@@ -87,7 +86,6 @@ public class StateMachine extends Component{
             }
         }
     }
-
     private int stateIndexOf(String stateTitle) {
         int index = 0;
         for (AnimationState state : states) {
